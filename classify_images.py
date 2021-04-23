@@ -81,7 +81,6 @@ def classify_images(images_dir, results_dic, model):
        # as an exact match to on of the terms in the list - then they are added to
        # results_dic as an exact match(1) using extend list function
         if truth in model_label:
-            results_dic[key] = [truth, model_label, 1]
             results_dic[key].extend((model_label, 1))
 
        # TODO: 3d. REPLACE pass BELOW with CODE that uses the extend list function
@@ -93,5 +92,4 @@ def classify_images(images_dir, results_dic, model):
        # if not found then added to results dictionary as NOT a match(0) using
        # the extend function
         else:
-            results_dic[key] = [truth, model_label, 0]
             results_dic[key].extend((model_label, 0))
